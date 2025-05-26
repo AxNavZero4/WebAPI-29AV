@@ -20,7 +20,7 @@ namespace WebAPI.Context
                 new Usuario
                 {
                     PkUsuario = 1,
-                    Nombre = "Majo",
+                    Nombre = "Majo", 
                     UserName = "Usuario",
                     Password = "123",
                     FkRol = 1 // Aqui debes poner rol correspondiente

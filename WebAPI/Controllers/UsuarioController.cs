@@ -1,5 +1,4 @@
 ﻿using Domain.DTO;
-using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Services.IServices;
 
@@ -16,28 +15,44 @@ namespace WebAPI.Controllers
             _usuarioServices = usuarioServices;
         }
 
+        /// Obtiene la lista de todos los usuarios.
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
-            var response = await _usuarioServices.GetAll(); 
-
+            var response = await _usuarioServices.GetAll();
             return Ok(response);
         }
 
-        [HttpGet("id")]
-        public async Task<IActionResult> GetByID(int id)
+        /// Obtiene un usuario por su ID.
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById(int id)
         {
             var response = await _usuarioServices.GetbyId(id);
             return Ok(response);
         }
 
+        /// Crea un nuevo usuario.
         [HttpPost]
         public async Task<IActionResult> Create(UsuarioRequest request)
         {
-            var respose = await _usuarioServices.Create(request);
-            return Ok(respose);
+            var response = await _usuarioServices.Create(request);
+            return Ok(response);
         }
-        
-       
+
+        /// Actualiza un usuario existente.
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UsuarioRequest request)
+        {
+            var response = await _usuarioServices.Update(id, request);
+            return Ok(response);
+        }
+
+        /// Elimina un usuario por su ID.
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = await _usuarioServices.Delete(id);
+            return Ok(response);
+        }
     }
 }

@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
+    // La clase a la que pertenece un usuario dentro del sistema
     public class Usuario
     {
         [Key]
-        public int PkUsuario {  get; set; }
+        public int PkUsuario { get; set; }
 
         public string Nombre { get; set; }
 
@@ -20,8 +21,8 @@ namespace Domain.Entities
         public string Password { get; set; }
 
         [ForeignKey("Roles")]
-        public int? FkRol {  get; set; }
+        public int? FkRol { get; set; }
 
-        public Rol Roles {  get; set; }
+        public Rol Roles { get; set; }
     }
 }

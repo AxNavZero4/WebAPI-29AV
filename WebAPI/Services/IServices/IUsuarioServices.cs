@@ -5,12 +5,23 @@ namespace WebAPI.Services.IServices
 {
     public interface IUsuarioServices
     {
-        public Task<Response<List<Usuario>>> GetAll();
-        public Task<Response<Usuario>> GetbyId(int id);
-        public Task<Response<Usuario>> Create(UsuarioRequest request);
+
+        /// Obtiene la lista completa de usuarios con sus roles asociados.
+        Task<Response<List<Usuario>>> GetAll();
 
 
+        /// Obtiene un usuario por su ID.
+        Task<Response<Usuario>> GetbyId(int id);
 
 
+        /// Crea un nuevo usuario.
+        Task<Response<Usuario>> Create(UsuarioRequest request);
+
+
+        /// Actualiza un usuario existente.
+        Task<Response<Usuario>> Update(int id, UsuarioRequest request);
+
+        /// Elimina un usuario por su ID.
+        Task<Response<bool>> Delete(int id);
     }
 }
