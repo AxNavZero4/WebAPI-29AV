@@ -17,7 +17,7 @@ namespace WebAPI.Services.Services
         }
 
 
-        /// Obtiene la lista completa de usuarios con sus roles asociados.
+        // Obtiene la lista completa de usuarios con sus roles asociados
 
         public async Task<Response<List<Usuario>>> GetAll()
         {
@@ -34,7 +34,7 @@ namespace WebAPI.Services.Services
             }
         }
 
-        /// Obtiene un usuario por su ID.
+        // Obtiene un usuario por su ID
         public async Task<Response<Usuario>> GetbyId(int id)
         {
             try
@@ -55,7 +55,7 @@ namespace WebAPI.Services.Services
         }
 
 
-        /// Crea un nuevo usuario.
+        // Crea un nuevo usuario
         public async Task<Response<Usuario>> Create(UsuarioRequest request)
         {
             try
@@ -80,7 +80,7 @@ namespace WebAPI.Services.Services
                 {
                     Nombre = request.Nombre,
                     UserName = request.UserName,
-                    Password = request.Password, // Nota: En producción, deberías hashear la contraseña
+                    Password = request.Password,
                     FkRol = request.FkRol
                 };
 
@@ -94,7 +94,7 @@ namespace WebAPI.Services.Services
             }
         }
 
-        /// Actualiza un usuario existente.
+        // Actualiza un usuario existente
         public async Task<Response<Usuario>> Update(int id, UsuarioRequest request)
         {
             try
@@ -123,7 +123,7 @@ namespace WebAPI.Services.Services
 
                 usuario.Nombre = request.Nombre;
                 usuario.UserName = request.UserName;
-                usuario.Password = request.Password; // Nota: En producción, hashear la contraseña
+                usuario.Password = request.Password; 
                 usuario.FkRol = request.FkRol;
 
                 _context.Usuarios.Update(usuario);
@@ -137,7 +137,7 @@ namespace WebAPI.Services.Services
         }
 
 
-        /// Elimina un usuario por su ID.
+        // Elimina un usuario por su ID
         public async Task<Response<bool>> Delete(int id)
         {
             try

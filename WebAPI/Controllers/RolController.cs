@@ -14,7 +14,7 @@ namespace WebAPI.Controllers
             _rolServices = rolServices;
         }
 
-        /// Obtiene la lista de todos los roles.
+        // Obtiene la lista de todos los roles.
         [HttpGet]
         public async Task<IActionResult> GetRoles()
         {
@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
-        /// Obtiene un rol por su ID.
+        // Obtiene un rol por su ID.
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRolById(int id)
         {
@@ -30,7 +30,7 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
-        /// Crea un nuevo rol.
+        // Crea un nuevo rol.
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] string nombre)
         {
@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
-        /// Actualiza un rol existente.
+        // Actualiza un rol existente.
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] string nombre)
         {
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
-        /// Elimina un rol por su ID.
+        // Elimina un rol por su ID.
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

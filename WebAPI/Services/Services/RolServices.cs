@@ -13,7 +13,7 @@ namespace WebAPI.Services.Services
         {
             _context = context;
         }
-        /// Obtiene la lista completa de roles.
+        // Obtiene la lista completa de roles
         public async Task<Response<List<Rol>>> GetAll()
         {
             try
@@ -27,7 +27,7 @@ namespace WebAPI.Services.Services
             }
         }
 
-        /// Obtiene un rol por su ID.
+        // Obtiene un rol por su ID
 
         public async Task<Response<Rol>> GetById(int id)
         {
@@ -47,7 +47,7 @@ namespace WebAPI.Services.Services
         }
 
 
-        /// Crea un nuevo rol.
+        // Crea un nuevo rol
 
         public async Task<Response<Rol>> Create(string nombre)
         {
@@ -74,7 +74,7 @@ namespace WebAPI.Services.Services
             }
         }
 
-        /// Actualiza un rol existente.
+        // Actualiza un rol existente
 
         public async Task<Response<Rol>> Update(int id, string nombre)
         {
@@ -107,7 +107,7 @@ namespace WebAPI.Services.Services
             }
         }
 
-        /// Elimina un rol por su ID.
+        // Elimina un rol por su ID
 
         public async Task<Response<bool>> Delete(int id)
         {

@@ -15,7 +15,7 @@ namespace WebAPI.Controllers
             _usuarioServices = usuarioServices;
         }
 
-        /// Obtiene la lista de todos los usuarios.
+        // Obtiene la lista de todos los usuarios
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
@@ -23,7 +23,7 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
-        /// Obtiene un usuario por su ID.
+        // Obtiene un usuario por su ID
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {
@@ -31,7 +31,7 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
-        /// Crea un nuevo usuario.
+        // Crea un nuevo usuario
         [HttpPost]
         public async Task<IActionResult> Create(UsuarioRequest request)
         {
@@ -39,7 +39,7 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
-        /// Actualiza un usuario existente.
+        // Actualiza un usuario existente
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] UsuarioRequest request)
         {
@@ -47,7 +47,7 @@ namespace WebAPI.Controllers
             return Ok(response);
         }
 
-        /// Elimina un usuario por su ID.
+        // Elimina un usuario por su ID
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
